@@ -1,0 +1,19 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example-container > * {
+    width: 100%;
+  }
+
+  .top-padding{
+      padding: 20px;
+  }
+
+  .card-form-size{
+      width: 400px;
+      text-align: center;
+
+  }
+  
