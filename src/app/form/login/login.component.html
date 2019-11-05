@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="login-card">
+        <mat-toolbar color="primary">Sign In</mat-toolbar>
+        <mat-card>
+            <div style="margin-top:30px ">
+                <form [formGroup]="loginFrom" (ngSubmit)="onSubmit()">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Enter User Name</mat-label>
+                        <input matInput placeholder="Username" formControlName="username" name="username" required>
+                        <mat-error>Please Enter Username</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Enter Password</mat-label>
+                        <input matInput placeholder="Password" type="password" formControlName="password"
+                            name="password" required>
+                        <mat-error>Please Enter Password</mat-error>
+                    </mat-form-field>
+
+                    <button [disabled]="!loginFrom.valid" class="login-button" mat-raised-button type="submit" color="primary">Login</button>
+                </form>
+            </div>
+
+
+
+        </mat-card>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+<div class="container">
+
+  <form class="example-form">
+    <div class="row1 ">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="First Name" [value]="data.firstName" disabled>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Last Name" [value]="data.lastName" disabled>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Email Address" [value]="data.email" disabled>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="User Name" [value]="data.userName">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Password" [value]="data.password">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="User Type" [value]="data.userType">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="User Status" [value]="data.activeYN">
+      </mat-form-field>
+    </div>
+    <div class="row2 ">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Company Details" [value]="data.companyDetailMax">
+        <span matBadge="{{data.companyDetails}}" matBadgeOverlap="false"></span>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Company Financial " [value]="data.financialMax">
+        <span matBadge="{{data.financial}}" matBadgeOverlap="false"></span>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Company Financial PDF" [value]="data.financialPdfMax">
+        <span matBadge="{{data.financialPdf}}" matBadgeOverlap="false"></span>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Company Loan" [value]="data.companyLoanMax">
+        <span matBadge="{{data.companyLoans}}" matBadgeOverlap="false"></span>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Company Director" [value]="data.directorMax">
+        <span matBadge="{{data.director}}" matBadgeOverlap="false"></span>
+      </mat-form-field>
+
+    </div>
+
+
+
+
+  </form>
+</div>

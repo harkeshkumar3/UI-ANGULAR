@@ -1,0 +1,68 @@
+<div class="example-container">
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+</div>
+
+<div class="example-container mat-elevation-z8">
+
+  <mat-table [dataSource]="dataSource" matSort>
+    <!--       displayedColumns = ['id', 'firstName', 'username', 'active', 'maxcount', 'currentcount'];-->
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+      <mat-radio-group>
+        <mat-cell *matCellDef="let row ; let i = index">
+          <mat-radio-button (click)="checkBoxSelected(row, i)" [value]="row.userId"></mat-radio-button>
+        </mat-cell>
+      </mat-radio-group>
+    </ng-container>
+
+    <!-- Progress Column -->
+    <ng-container matColumnDef="firstName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Full Name </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.firstName}} {{row.lastName}} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Eamil </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.email}} </mat-cell>
+    </ng-container>
+
+    <!-- Color Column -->
+    <ng-container matColumnDef="username">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> User Name </mat-header-cell>
+      <mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.userName}} </mat-cell>
+    </ng-container>
+    <!-- Color Column -->
+    <ng-container matColumnDef="maxcount">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Max Hit Counter </mat-header-cell>
+      <mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.csrMaxCounter}} </mat-cell>
+    </ng-container>
+    <!-- Color Column -->
+    <ng-container matColumnDef="currentcount">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Current Count </mat-header-cell>
+      <mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.cfsCurrentCounter}} </mat-cell>
+    </ng-container>
+    <!-- Color Column -->
+    <ng-container matColumnDef="active">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Active </mat-header-cell>
+      <mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.activeYN}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;">
+    </mat-row>
+  </mat-table>
+  <mat-paginator [pageSize]="4" [pageSizeOptions]="[5, 10, 20]"></mat-paginator>
+
+</div>
+<div class="example-button-row">
+  <button mat-raised-button color="primary">Add</button>
+  <button [disabled]="!rowSelected" mat-raised-button color="primary" (click)="openDialog()">Edit</button>
+
+</div>
+<!-- Copyright 2018 Google Inc. All Rights Reserved.
+      Use of this source code is governed by an MIT-style license that
+      can be found in the LICENSE file at http://angular.io/license -->
